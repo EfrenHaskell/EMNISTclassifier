@@ -13,16 +13,16 @@ def load_data() -> (DataLoader, DataLoader):
 
 
 def train(train_loader: DataLoader, test_loader: DataLoader):
-    raise
+    pass
 
 
 def test(test_loader: DataLoader):
-    raise
+    pass
 
 
 if __name__ == '__main__':
     epochs: int = 1
     loaders = load_data()
     for epoch in range(epochs):
-        train(loaders[0],loaders[1])
+        train(loaders[0], loaders[1])
 
