@@ -2,7 +2,7 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import TensorDataset, DataLoader
-
+from net_utils import *
 
 def load_data() -> (DataLoader, DataLoader):
     train_set = torchvision.datasets.MNIST(root="data", train=True, transform= transforms.ToTensor(), download=True)
