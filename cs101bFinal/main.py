@@ -6,9 +6,9 @@ from net_utils import *
 
 
 def load_data() -> (DataLoader, DataLoader):
-    # downloads MNIST training and test set and produces two data loaders
-    train_set = torchvision.datasets.MNIST(root="data", train=True, transform=transforms.ToTensor(), download=True)
-    test_set = torchvision.datasets.MNIST(root="data", train=False, transform=transforms.ToTensor(), download=True)
+    # downloads EMNIST training and test set and produces two data loaders
+    train_set = torchvision.datasets.EMNIST(root="data", split="balanced", train=True, transform=transforms.ToTensor(), download=True)
+    test_set = torchvision.datasets.EMNIST(root="data", split="balanced", train=False, transform=transforms.ToTensor(), download=True)
     train_loader: DataLoader = DataLoader(train_set, batch_size=100, shuffle=True)
     test_loader: DataLoader = DataLoader(test_set, batch_size=100, shuffle=True)
     return train_loader, test_loader
