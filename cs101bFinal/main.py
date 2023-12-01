@@ -7,6 +7,9 @@ from net_utils import *
 
 def load_data() -> (DataLoader, DataLoader):
     # downloads EMNIST training and test set and produces two data loaders
+    # EMNIST includes 47 classes, there should be 131,600 characters in total
+    # Dimensions should be 28 x 28
+    # tensor dimensions: [100, 1, 28, 28]
     train_set = torchvision.datasets.EMNIST(root="data", split="balanced", train=True, transform=transforms.ToTensor(), download=True)
     test_set = torchvision.datasets.EMNIST(root="data", split="balanced", train=False, transform=transforms.ToTensor(), download=True)
     train_loader: DataLoader = DataLoader(train_set, batch_size=100, shuffle=True)
