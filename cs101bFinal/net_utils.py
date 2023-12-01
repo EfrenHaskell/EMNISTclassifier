@@ -20,3 +20,4 @@ class Net(nn.Module):
         data = self.pool(F.relu(self.conv_layer2(data)))
         data = torch.flatten(data, 1)
         data = F.relu(self.connected(data))
+        return data
