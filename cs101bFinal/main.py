@@ -38,7 +38,7 @@ def train(train_loader: DataLoader, net, epoch_num):
         if batch % 2000 == 1999:
             print(f'[{epoch_num + 1}, {batch + 1:5d}] loss: {running_loss / 2000:.3f}')
             running_loss = 0.0
-        print('Finished Training')
+    print('Finished Training')
 
 
 def test(test_loader: DataLoader, net, epoch_num: int):
