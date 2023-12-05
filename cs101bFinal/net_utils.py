@@ -16,8 +16,8 @@ class Net(nn.Module):
 
     def forward(self, data):
         # simple activation and pooling sequence
-        data = self.pool(self.conv_layer1(data))
+        data = self.pool(F.relu(self.conv_layer1(data)))
         data = self.pool(F.relu(self.conv_layer2(data)))
-        data = torch.flatten(data, 1)
-        data = F.relu(self.connected(data))
+        data = data.view(data.size(0), -1)
+        data = self.connected(data)
         return data
