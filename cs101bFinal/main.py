@@ -7,7 +7,7 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-def load_data() -> (DataLoader, DataLoader):
+def load_data() -> tuple[DataLoader, DataLoader]:
     # downloads EMNIST training and test set and produces two data loaders
     # EMNIST includes 47 classes, there should be 131,600 characters in total
     # Dimensions should be 28 x 28
