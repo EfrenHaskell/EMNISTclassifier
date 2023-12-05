@@ -24,7 +24,7 @@ def train(train_loader: DataLoader):
         pass
 
 
-def test(test_loader: DataLoader):
+def test(test_loader: DataLoader, epoch_num: int):
     pass
 
 
@@ -34,4 +34,4 @@ if __name__ == '__main__':
     # outer loop for multiple training epochs
     for epoch in range(epochs):
         train(train_data)
-        test(test_data)
+        test(test_data, epoch)
