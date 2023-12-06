@@ -12,7 +12,8 @@ class Net(nn.Module):
         self.pool = nn.MaxPool2d(kernel_size=2)
         # in_features is equivalent to channels * height * width
         # out_features should match number of possible data classes
-        self.connected = nn.Linear(in_features=(32 * 7 * 7), out_features=47)
+        self.connected = nn.Linear(in_features=1568, out_features=512)
+        self.connected2 = nn.Linear(in_features=512, out_features=47)
 
     def forward(self, data):
         # simple activation and pooling sequence
@@ -20,4 +21,5 @@ class Net(nn.Module):
         data = self.pool(F.relu(self.conv_layer2(data)))
         data = data.view(data.size(0), -1)
         data = self.connected(data)
+        data = self.connected2(data)
         return data
